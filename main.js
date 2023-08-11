@@ -1,11 +1,11 @@
+// Variables
 const screenOne = document.querySelector(".screenOne")
 const screenTwo = document.querySelector(".screenTwo")
 const raffle = document.querySelector("#raffle")
 const tryAgain = document.querySelector("#tryAgain")
-
 let randomNumber = Math.round(Math.random() * 10)
-console.log(randomNumber)
 
+// Functions
 function pickPhrase(number) {
   switch (randomNumber) {
     case 0:
@@ -57,7 +57,6 @@ function pickPhrase(number) {
         "Deixe de lado as preocupações e seja feliz."
   }
 }
-
 function toggleScren() {
   screenOne.classList.toggle("hide")
   screenTwo.classList.toggle("hide")
@@ -70,11 +69,9 @@ function handleTryAgain() {
   toggleScren()
   pickPhrase()
   randomNumber = Math.round(Math.random() * 10)
-
-  console.log(randomNumber)
 }
 
-// eventos
+// Events
 raffle.addEventListener("click", handleTryLuck)
 tryAgain.addEventListener("click", handleTryAgain)
 document.addEventListener("keydown", function (e) {

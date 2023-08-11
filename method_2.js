@@ -4,7 +4,6 @@ const raffle = document.querySelector("#raffle")
 const tryAgain = document.querySelector("#tryAgain")
 
 let randomNumber = Math.round(Math.random() * 10)
-console.log(randomNumber)
 
 function pickPhrase(number) {
   switch (randomNumber) {
@@ -57,7 +56,6 @@ function pickPhrase(number) {
         "Deixe de lado as preocupações e seja feliz."
   }
 }
-
 function toggleScren() {
   screenOne.classList.toggle("hide")
   screenTwo.classList.toggle("hide")
@@ -70,8 +68,6 @@ function handleTryAgain() {
   toggleScren()
   pickPhrase()
   randomNumber = Math.round(Math.random() * 10)
-
-  console.log(randomNumber)
 }
 
 // eventos
