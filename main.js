@@ -6,7 +6,7 @@ const tryAgain = document.querySelector("#tryAgain")
 let randomNumber = Math.round(Math.random() * 10)
 console.log(randomNumber)
 
-function frases(number) {
+function pickPhrase(number) {
   switch (randomNumber) {
     case 0:
       screenTwo.querySelector("p").innerText =
@@ -64,11 +64,11 @@ function toggleScren() {
 }
 function handleTryLuck(event) {
   toggleScren()
-  frases()
+  pickPhrase()
 }
 function handleTryAgain() {
   toggleScren()
-  frases()
+  pickPhrase()
   randomNumber = Math.round(Math.random() * 10)
 
   console.log(randomNumber)
@@ -77,3 +77,10 @@ function handleTryAgain() {
 // eventos
 raffle.addEventListener("click", handleTryLuck)
 tryAgain.addEventListener("click", handleTryAgain)
+document.addEventListener("keydown", function (e) {
+  if (e.key == "Enter" && screenTwo.classList.contains("hide")) {
+    handleTryAgain()
+  } else if (e.key == "Enter" && screenOne.classList.contains("hide")) {
+    handleTryLuck()
+  }
+})
